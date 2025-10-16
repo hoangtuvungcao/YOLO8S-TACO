@@ -1,5 +1,64 @@
 # 🗑️ Nhận Diện Rác Thải với YOLOv8s và Tập Dữ Liệu TACO
 
+## 📊 Phân Tích Hiệu suất Mô hình
+
+###  Ma trận Nhầm lẫn (Confusion Matrix)
+
+Thể hiện mức độ phân loại chính xác giữa các lớp rác thải.
+
+| Ma trận Nhầm lẫn (Chuẩn hóa) | Ma trận Nhầm lẫn |
+| :---: | :---: |
+| ![Ma trận nhầm lẫn (Đã chuẩn hóa)](confusion_matrix_normalized.png) | ![Ma trận nhầm lẫn](confusion_matrix.png) |
+
+### Các Đường cong Đánh giá
+
+Đánh giá hiệu suất mô hình qua các chỉ số Precision (P), Recall (R), và F1-Score.
+
+| Đường cong P (Precision) | Đường cong R (Recall) | Đường cong F1 | Đường cong PR (Precision-Recall) |
+| :---: | :---: | :---: | :---: |
+| ![Đường cong P](P_curve.png) | ![Đường cong R](R_curve.png) | ![Đường cong F1](F1_curve.png) | ![Đường cong PR](PR_curve.png) |
+
+### Lịch sử Huấn luyện và Độ chính xác
+
+Biểu đồ tóm tắt sự thay đổi của Loss và mAP qua các Epoch.
+
+![Lịch sử huấn luyện (results.png)](results.png)
+
+---
+
+## 🖼️ Trực quan hóa Dữ liệu và Nhận diện
+
+###  Phân bố Dữ liệu (Labels)
+
+Các biểu đồ thể hiện sự phân bố và tương quan của các chú thích (bounding box) trong tập dữ liệu.
+
+| Phân bố Labels | Tương quan Labels |
+| :---: | :---: |
+| ![Phân bố Labels](labels.jpg) | ![Tương quan Labels](labels_correlogram.jpg) |
+
+###  Kết quả Kiểm tra (Validation Batch Examples)
+
+So sánh giữa nhãn gốc (Ground Truth) và kết quả dự đoán (Prediction) trên các lô (batch) của tập kiểm tra.
+
+| Labels Gốc (Batch 0) | Dự đoán (Batch 0) |
+| :---: | :---: |
+| ![val_batch0_Labels.jpg](val_batch0_labels.jpg) | ![val_batch0_pred.jpg](val_batch0_pred.jpg) |
+| Labels Gốc (Batch 1) | Dự đoán (Batch 1) |
+| ![val_batch1_Labels.jpg](val_batch1_labels.jpg) | ![val_batch1_pred.jpg](val_batch1_pred.jpg) |
+| Labels Gốc (Batch 2) | Dự đoán (Batch 2) |
+| ![val_batch2_Labels.jpg](val_batch2_labels.jpg) | ![val_batch2_pred.jpg](val_batch2_pred.jpg) |
+
+###  Các Batch Huấn luyện (Training Batch Examples)
+
+Các hình ảnh được sử dụng trong quá trình huấn luyện (đã được augment/xử lý).
+
+| Batch 0 | Batch 1 | Batch 2 | Batch Cuối |
+| :---: | :---: | :---: | :---: |
+| ![train_batch0.jpg](train_batch0.jpg) | ![train_batch1.jpg](train_batch1.jpg) | ![train_batch2.jpg](train_batch2.jpg) | ![train_batch7521.jpg](train_batch7521.jpg) |
+
+---
+*Lưu ý: Các hình ảnh này được tạo ra tự động bởi thư viện Ultralytics/YOLOv8 sau quá trình huấn luyện và đánh giá mô hình.*
+
 
 ## 1\. Giới thiệu
 
